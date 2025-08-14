@@ -41,8 +41,19 @@ class GamesController < ApplicationController
     
     redirect_to game_path(id: 1)
   end
+
+  def reset_game_action
+    reset_game
+    redirect_to game_path(id: 1), notice: "🎮 新しいゲームを開始しました！"
+  end
   
   private
+
+  def initialize_game_if_needed
+    if session[:deck].blank? || session[:current_card_index].blank?
+      reset_game
+    end
+  end
   
   def reset_game
     deck = Card.create_deck  #52枚のシャッフル済みデッキ作成　（セッションに保存）
@@ -59,6 +70,19 @@ class GamesController < ApplicationController
       used_cards << Card.new(card_data['suit'], card_data['rank'])  #オブジェクト復元
     end
     used_cards
+  end
+
+  def get_current_card
+    card_data = session[:deck][session[:current_card_index]]
+    Card.new(card_data['suit'], card_data['rank'])
+  end
+
+  def get_next_card
+    next_index = session[:current_card_index] + 1
+    return nil if next_index >= session[:deck].length
+    
+    card_data = session[:deck][next_index]
+    Card.new(card_data['suit'], card_data['rank'])
   end
   
   def process_guess(prediction)
