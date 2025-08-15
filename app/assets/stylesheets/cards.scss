@@ -1,6 +1,6 @@
 .game-container {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
+    background: linear-gradient(135deg, #039908 0%, #039908 50%, #039908 100%);
     min-height: 100vh;
     padding: 20px;
     color: #333;
@@ -47,10 +47,25 @@
   }
   
   /* ゲーム関連のスタイル */
+
   .score-section {
-    text-align: center;
+    background-color: rgba(255, 215, 0, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #ffd700;
     margin-bottom: 30px;
-  }
+    
+    h2 {
+      color: #ffcc00 !important; // リッチゴールド
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+    
+    p {
+      color: #ffffff !important; // 白
+      font-size: 1.1em;
+    }
+  }  
   
   .current-card {
     text-align: center;
@@ -60,49 +75,78 @@
   .game-controls {
     text-align: center;
     margin-bottom: 30px;
+    
+    h3 {
+      color: #f5f5dc !important; // ベージュ
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    
+    .btn {
+      padding: 15px 30px;
+      margin: 0 10px;
+      border-radius: 8px;
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      border: none;
+      
+      // HIGH ボタン（赤系）
+      &.btn-high {
+        background: linear-gradient(45deg, #ff6b6b, #ff4757);
+        color: #ffffff !important;
+        border: 3px solid #ff4757;
+        
+        &:hover {
+          background: linear-gradient(45deg, #ff4757, #ff3838);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(255, 71, 87, 0.3);
+        }
+      }
+      
+      // LOW ボタン（青系）
+      &.btn-low {
+        background: linear-gradient(45deg, #4834d4, #686de0);
+        color: #ffffff !important;
+        border: 3px solid #4834d4;
+        
+        &:hover {
+          background: linear-gradient(45deg, #3742fa, #4834d4);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(72, 52, 212, 0.3);
+        }
+      }
+      
+      // もう一度プレイボタン（青緑系）
+      &.btn-success {
+        background: linear-gradient(45deg, #00d2d3, #54a0ff);
+        color: #ffffff !important;
+        border: 3px solid #00d2d3;
+        
+        &:hover {
+          background: linear-gradient(45deg, #54a0ff, #00d2d3);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(0, 210, 211, 0.3);
+        }
+      }
+      
+      // スタート画面に戻るボタン（グレー系）
+      &.btn-secondary {
+        background: linear-gradient(45deg, #6c757d, #495057);
+        color: #ffffff !important;
+        border: 3px solid #6c757d;
+        
+        &:hover {
+          background: linear-gradient(45deg, #495057, #343a40);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+        }
+      }
+    }
   }
-  
-  .btn {
-    padding: 15px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin: 0 10px;
-    
-    &.btn-primary {
-      background: linear-gradient(45deg, #28a745, #20c997);
-      color: white;
-      
-      &:hover {
-        background: linear-gradient(45deg, #218838, #1abc9c);
-        transform: translateY(-2px);
-      }
-    }
-    
-    &.btn-secondary {
-      background: linear-gradient(45deg, #dc3545, #fd7e14);
-      color: white;
-      
-      &:hover {
-        background: linear-gradient(45deg, #c82333, #e8590c);
-        transform: translateY(-2px);
-      }
-    }
-    
-    &.btn-success {
-      background: linear-gradient(45deg, #007bff, #6610f2);
-      color: white;
-      
-      &:hover {
-        background: linear-gradient(45deg, #0056b3, #520dc2);
-        transform: translateY(-2px);
-      }
-    }
-  }
-  
   .used-cards {
     margin-top: 40px;
     text-align: center;
@@ -120,3 +164,29 @@
     text-align: center;
     margin: 30px 0;
   }
+//   ゲームのテーブルを作成
+  .game-table {
+    text-align: center;
+    margin-bottom: 30px;
+    
+    .current-card {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 15px;
+      border: 3px solid #ffd700;
+      
+      h3 {
+        color: #ffffff !important;
+        font-size: 1.3em;
+        margin-bottom: 15px;
+      }
+      
+      .card-name {
+        color: #ffd700 !important;
+        font-weight: bold;
+        font-size: 1.2em;
+        margin-top: 10px;
+      }
+    }
+  }
+

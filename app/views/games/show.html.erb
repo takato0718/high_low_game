@@ -2,18 +2,19 @@
   <div class="game-header">
     <h1>🃏 High & Low ゲーム</h1>
   
-  <!-- スコア表示 -->
-  <div class="score-section">
-    <h2>連続正解数: <%= @score %></h2>
-    <p>残りカード: <%= @remaining_cards %>枚</p>
+    <!-- スコア表示 -->
+    <div class="score-section">
+      <h2>連続正解数: <%= @score %></h2>
+      <p>残りカード: <%= @remaining_cards %>枚</p>
+    </div>
   </div>
   
   <!-- 現在のカード表示 -->
   <div class="game-table">
     <div class="current-card">
       <h3>現在のカード</h3>
-    <%= card_image_tag(@current_card, size: 'large') %>
-    <p class="card-name"><%= @current_card.display_name %></p>
+      <%= card_image_tag(@current_card, size: 'large') %>
+      <p class="card-name"><%= @current_card.display_name %></p>
     </div>
   </div>
   
@@ -25,15 +26,26 @@
         <%= f.submit "📈 HIGH（大きい）", name: "prediction", value: "high", class: "btn btn-high" %>
         <%= f.submit "📉 LOW（小さい）", name: "prediction", value: "low", class: "btn btn-low" %>
       <% end %>
+      <div class="game-actions">
+      <%= link_to "🏠 スタート画面に戻る", root_path, class: "btn btn-secondary btn-small" %>
+      </div>
     </div>
   <% else %>
-    <div class="game-over">
-      <h2>🎮 ゲーム終了</h2>
-      <p>最終スコア: <%= @score %>回連続正解！</p>
-    <!--form_with使用 POSTメソッドにする -->
-    <%= form_with url: reset_game_game_path(id: 1), method: :post, local: true do |f| %>
-      <%= f.submit "🔄 もう一度プレイ", class: "btn btn-success" %>
-    <% end %>
+    <div class="game-controls">
+      <div class="game-over">
+        <h2>🎮 ゲーム終了</h2>
+        <p>最終スコア: <%= @score %>回連続正解！</p>
+        
+        <div class="game-over-buttons">
+          <!-- form_with使用 POSTメソッドにする -->
+          <%= form_with url: reset_game_game_path(id: 1), method: :post, local: true, class: "d-inline" do |f| %>
+            <%= f.submit "🔄 もう一度プレイ", class: "btn btn-success" %>
+          <% end %>
+          
+          <%= link_to "🏠 スタート画面に戻る", root_path, class: "btn btn-secondary" %>
+        </div>
+      </div>
+    </div>
   <% end %>
   
   <!-- 使用済みカード一覧（カードカウンティング用） -->
