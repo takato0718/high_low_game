@@ -23,26 +23,32 @@
     <div class="game-controls">
       <h3>次のカードは今のカードより...</h3>
       <%= form_with url: guess_game_path(id: 1), method: :post, local: true do |f| %>
-        <%= f.submit "📈 HIGH（大きい）", name: "prediction", value: "high", class: "btn btn-high" %>
-        <%= f.submit "📉 LOW（小さい）", name: "prediction", value: "low", class: "btn btn-low" %>
+        <%= f.submit "HIGH（大きい）", name: "prediction", value: "high", class: "btn btn-high" %>
+        <%= f.submit "LOW（小さい）", name: "prediction", value: "low", class: "btn btn-low" %>
       <% end %>
       <div class="game-actions">
-      <%= link_to "🏠 スタート画面に戻る", root_path, class: "btn btn-secondary btn-small" %>
+      <%= link_to "スタート画面に戻る", root_path, class: "btn btn-secondary btn-small" %>
       </div>
     </div>
   <% else %>
     <div class="game-controls">
       <div class="game-over">
-        <h2>🎮 ゲーム終了</h2>
+        <h2>ゲーム終了</h2>
         <p>最終スコア: <%= @score %>回連続正解！</p>
         
         <div class="game-over-buttons">
           <!-- form_with使用 POSTメソッドにする -->
           <%= form_with url: reset_game_game_path(id: 1), method: :post, local: true, class: "d-inline" do |f| %>
-            <%= f.submit "🔄 もう一度プレイ", class: "btn btn-success" %>
+            <%= f.submit "もう一度プレイ", class: "btn btn-success" %>
           <% end %>
           
-          <%= link_to "🏠 スタート画面に戻る", root_path, class: "btn btn-secondary" %>
+          <%= link_to "スタート画面に戻る", root_path, class: "btn btn-secondary" %>
+          <%= link_to twitter_share_url(@score), 
+            target: "_blank", 
+            rel: "noopener noreferrer",
+            class: "btn btn-twitter" do %>
+          結果をXで共有
+        <% end %>
         </div>
       </div>
     </div>

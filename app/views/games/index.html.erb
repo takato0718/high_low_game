@@ -1,6 +1,22 @@
 <div class="start-screen">
-  <h1>🃏 High & Low ゲーム</h1>
-  
-  <!-- ゲーム開始ボタン -->
-  <%= link_to "🚀 ゲームスタート", game_path(id: 1), class: "btn btn-start" %>
+  <div class="start-content">
+    <div class="game-container">
+      <div class="game-header">
+        <h1>🃏 High & Low ゲーム</h1>
+        <p>カードの数字を予想して連続正解を目指せ！</p>
+      </div>
+      
+      <div class="game-controls">
+        <%= link_to "ゲームスタート", game_path(1), class: "btn btn-success btn-large" %>
+        <div class="game-rules">
+          <h3>ルール</h3>
+          <ul>
+            <li>現在のカードより次のカードの数字が大きいか小さいかを予想</li>
+            <li>連続正解を目指そう</li>
+            <li>間違えるとゲーム終了</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
