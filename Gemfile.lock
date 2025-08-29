@@ -116,17 +116,7 @@ GEM
     faker (3.5.2)
       i18n (>= 1.8.11, < 2)
     ffi (1.17.2-aarch64-linux-gnu)
-<<<<<<< HEAD
-    ffi (1.17.2-aarch64-linux-musl)
-    ffi (1.17.2-arm-linux-gnu)
-    ffi (1.17.2-arm-linux-musl)
-    ffi (1.17.2-arm64-darwin)
-    ffi (1.17.2-x86_64-darwin)
     ffi (1.17.2-x86_64-linux-gnu)
-    ffi (1.17.2-x86_64-linux-musl)
-=======
-    ffi (1.17.2-x86_64-linux-gnu)
->>>>>>> main
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.7)
@@ -164,7 +154,7 @@ GEM
       net-smtp
     marcel (1.0.4)
     matrix (0.4.3)
-    mini_magick (5.3.1)
+    mini_magick (5.3.0)
       logger
     mini_mime (1.1.5)
     minitest (5.25.5)
@@ -181,40 +171,14 @@ GEM
     nio4r (2.7.4)
     nokogiri (1.18.9-aarch64-linux-gnu)
       racc (~> 1.4)
-<<<<<<< HEAD
-    nokogiri (1.18.9-aarch64-linux-musl)
-      racc (~> 1.4)
-    nokogiri (1.18.9-arm-linux-gnu)
-      racc (~> 1.4)
-    nokogiri (1.18.9-arm-linux-musl)
-      racc (~> 1.4)
-    nokogiri (1.18.9-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.18.9-x86_64-darwin)
-      racc (~> 1.4)
     nokogiri (1.18.9-x86_64-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.18.9-x86_64-linux-musl)
-      racc (~> 1.4)
-=======
-    nokogiri (1.18.9-x86_64-linux-gnu)
-      racc (~> 1.4)
->>>>>>> main
     parallel (1.27.0)
     parser (3.3.9.0)
       ast (~> 2.4.1)
       racc
-    pg (1.6.1)
     pg (1.6.1-aarch64-linux)
-<<<<<<< HEAD
-    pg (1.6.1-aarch64-linux-musl)
-    pg (1.6.1-arm64-darwin)
-    pg (1.6.1-x86_64-darwin)
     pg (1.6.1-x86_64-linux)
-    pg (1.6.1-x86_64-linux-musl)
-=======
-    pg (1.6.1-x86_64-linux)
->>>>>>> main
     popper_js (2.11.8)
     pp (0.6.2)
       prettyprint
@@ -271,10 +235,10 @@ GEM
     rdoc (6.14.2)
       erb
       psych (>= 4.0.0)
-    regexp_parser (2.11.2)
+    regexp_parser (2.11.0)
     reline (0.6.2)
       io-console (~> 0.5)
-    rexml (3.4.2)
+    rexml (3.4.1)
     rouge (4.6.0)
     rspec-core (3.13.5)
       rspec-support (~> 3.13.0)
@@ -292,8 +256,8 @@ GEM
       rspec-expectations (~> 3.13)
       rspec-mocks (~> 3.13)
       rspec-support (~> 3.13)
-    rspec-support (3.13.5)
-    rubocop (1.80.1)
+    rspec-support (3.13.4)
+    rubocop (1.79.2)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -307,26 +271,22 @@ GEM
     rubocop-ast (1.46.0)
       parser (>= 3.3.7.2)
       prism (~> 1.4)
-    rubocop-capybara (2.22.1)
-      lint_roller (~> 1.1)
-      rubocop (~> 1.72, >= 1.72.1)
-    rubocop-checkstyle_formatter (0.6.0)
-      rubocop (>= 1.14.0)
     rubocop-performance (1.25.0)
       lint_roller (~> 1.1)
       rubocop (>= 1.75.0, < 2.0)
       rubocop-ast (>= 1.38.0, < 2.0)
-    rubocop-rails (2.33.3)
+    rubocop-rails (2.32.0)
       activesupport (>= 4.2.0)
       lint_roller (~> 1.1)
       rack (>= 1.1)
       rubocop (>= 1.75.0, < 2.0)
       rubocop-ast (>= 1.44.0, < 2.0)
-    rubocop-rspec (3.6.0)
-      lint_roller (~> 1.1)
-      rubocop (~> 1.72, >= 1.72.1)
+    rubocop-rails-omakase (1.1.0)
+      rubocop (>= 1.72)
+      rubocop-performance (>= 1.24)
+      rubocop-rails (>= 2.30)
     ruby-progressbar (1.13.0)
-    ruby-vips (2.2.5)
+    ruby-vips (2.2.4)
       ffi (~> 1.12)
       logger
     rubyzip (2.4.1)
@@ -367,7 +327,7 @@ GEM
       railties (>= 7.1.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    unicode-display_width (3.1.5)
+    unicode-display_width (3.1.4)
       unicode-emoji (~> 4.0, >= 4.0.4)
     unicode-emoji (4.0.4)
     useragent (0.16.11)
@@ -391,20 +351,8 @@ GEM
     zeitwerk (2.6.18)
 
 PLATFORMS
-<<<<<<< HEAD
-  aarch64-linux-gnu
-  aarch64-linux-musl
-  arm-linux-gnu
-  arm-linux-musl
-  arm64-darwin
-  x86_64-darwin
-  x86_64-linux
-  x86_64-linux-gnu
-  x86_64-linux-musl
-=======
   aarch64-linux
   x86_64-linux
->>>>>>> main
 
 DEPENDENCIES
   better_errors
@@ -423,12 +371,7 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 7.2.2)
   rspec-rails
-  rubocop
-  rubocop-capybara
-  rubocop-checkstyle_formatter
-  rubocop-performance
-  rubocop-rails
-  rubocop-rspec
+  rubocop-rails-omakase
   sass-rails (>= 6)
   securerandom
   selenium-webdriver
@@ -440,4 +383,4 @@ DEPENDENCIES
   webpacker (~> 5.0)
 
 BUNDLED WITH
-   2.6.9
+   2.3.26
