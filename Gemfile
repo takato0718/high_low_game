@@ -23,7 +23,7 @@ gem 'image_processing', '~> 1.2'
 gem 'jquery-rails'
 gem 'sass-rails', '>= 6'
 gem 'securerandom'
-gem 'webpacker', '~> 5.0'
+# gem 'webpacker', '~> 5.0'
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
