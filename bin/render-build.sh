@@ -10,10 +10,12 @@ bundle install
 # Install Node.js dependencies if package.json exists
 if [ -f "package.json" ]; then
   echo "📦 Installing Node.js dependencies..."
-  echo "📍 Node version: $(node -v 2>/dev/null || echo 'Node.js not found')"
+  echo "📍 Node version: $(node -v)"
+  echo "📍 Yarn version: $(yarn -v)"
   
-  # Install with compatibility flags
-  yarn install --frozen-lockfile=false
+  # Clean install to avoid conflicts
+  rm -rf node_modules yarn.lock
+  yarn install
 else
   echo "📦 No package.json found, skipping Node.js dependencies"
 fi
