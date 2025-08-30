@@ -68,12 +68,14 @@ class Card
   end
 
   def image_path
+    return 'cards/default.png' if @rank.blank? || @suit.blank? #nil,空文字チェックを行う
+
     rank_name = case @rank
                 when 'A' then 'ace'
                 when 'J' then 'jack'
                 when 'Q' then 'queen'
                 when 'K' then 'king'
-                else @rank.downcase
+                else @rank.to_s.downcase
                 end
 
     "cards/#{rank_name}_of_#{suit_name}.png"
