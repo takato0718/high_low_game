@@ -17,6 +17,7 @@ class Card
   end
 
   def value
+    return 0 if @rank.blank?
     case @rank
     when 'A' then 1  # A = 1
     when 'J' then 11
@@ -27,10 +28,12 @@ class Card
   end
 
   def display_name
+    return 'Unknown Card' if @rank.blank? || @suit.blank?
     "#{@suit}#{@rank}" # ♥Aなど
   end
 
   def color
+    return 'black' if @suit.blank?
     %w[♥ ♦].include?(@suit) ? 'red' : 'black' # ♥ ♦は赤でそれ以外は黒
   end
 
@@ -47,6 +50,7 @@ class Card
   end
 
   def suit_name
+    return 'spades' if @suit.blank?
     case @suit
     when '♠' then 'spades'
     when '♥' then 'hearts'
@@ -56,6 +60,7 @@ class Card
   end
 
   def sprite_class
+    return 'card-unknown' if @rank.blank?
     card_value = case value
                  when 1 then 'A'
                  when 11 then 'J'
@@ -68,7 +73,7 @@ class Card
   end
 
   def image_path
-    return 'cards/default.png' if @rank.blank? || @suit.blank? #nil,空文字チェックを行う
+    return 'cards/ace_of_spades.png' if @rank.blank? || @suit.blank? #nil,空文字チェックを行う
 
     rank_name = case @rank
                 when 'A' then 'ace'
