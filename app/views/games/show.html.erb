@@ -13,6 +13,11 @@
   <div class="game-table">
     <div class="current-card">
       <h3>現在のカード</h3>
+      <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type == 'notice' ? 'info' : message_type %> flash-message">
+      <%= message %>
+    </div>
+  <% end %>
       <%= card_image_tag(@current_card, size: 'large') %>
       <p class="card-name"><%= @current_card.display_name %></p>
     </div>

@@ -12,7 +12,7 @@ module GamesHelper
               class: "#{css_class} #{card.css_classes}"
   end
 
-  # 🆕 ゲーム結果メッセージ　(のちに結果をスコアにした時に使うかも)
+  # ゲーム結果メッセージ　(のちに結果をスコアにした時に使うかも)
   #   def game_result_message(previous_card, current_card, guess, correct)
   #     result_class = correct ? 'result-correct' : 'result-incorrect'
   #     emoji = correct ? '🎉' : '😢'
@@ -23,7 +23,7 @@ module GamesHelper
   #     end
   #   end
 
-  # 🆕 スコア表示
+  # スコア表示
   def score_display(score, remaining_cards)
     content_tag :div, class: 'score-section' do
       content_tag(:h2, "連続正解数: #{score}") +
@@ -31,7 +31,7 @@ module GamesHelper
     end
   end
 
-  # 🆕 使用済みカード表示エリア
+  # 使用済みカード表示エリア
   def used_cards_display(used_cards)
     return if used_cards.empty?
 
@@ -66,9 +66,9 @@ module GamesHelper
     when 3..5
       "🃏 High & Lowゲームで#{score}回連続正解！結構やるじゃん？"
     when 6..9
-      "🃏 High & Lowゲームで#{score}回連続正解！すごい調子だ！"
+      "🃏 High & Lowゲームで#{score}回連続正解！いい調子じゃん？"
     when 10..15
-      "🃏 High & Lowゲームで#{score}回連続正解！神がかってる！"
+      "🃏 High & Lowゲームで#{score}回連続正解！鬼がかってますねっ！"
     else
       "🃏 High & Lowゲームで#{score}回連続正解！ああんもお！すんごいい！"
     end
