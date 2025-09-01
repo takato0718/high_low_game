@@ -1,0 +1,7 @@
+ja:
+  games:
+    messages:
+      new_game_started: "新しいゲームを開始！"
+      correct_answer: "正解！ %{message} (連続正解: %{score})"
+      game_over: "残念！ %{message} 最終スコア: %{score}"
+      perfect_clear: "君は成ったのだよ、神に、、全52枚予想的中最終スコア: %{score}"
