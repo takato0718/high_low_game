@@ -1,0 +1,22 @@
+FROM ruby:3.1.3
+
+# 必要なパッケージをインストール
+RUN apt-get update -qq && apt-get install -y \
+  postgresql-client \
+  nodejs \
+  && rm -rf /var/lib/apt/lists/*
+
+# 作業ディレクトリを設定
+WORKDIR /app
+
+# Gemfile と Gemfile.lock をコピー
+COPY Gemfile Gemfile.lock ./
+
+# gem をインストール
+RUN bundle install
+
+# アプリケーション全体をコピー
+COPY . .
+
+# server.pid を削除してから Rails サーバーを起動
+CMD ["bash", "-c", "rm -f tmp/pids/server.pid && bundle exec rails server -b 0.0.0.0"]
